@@ -1,0 +1,14 @@
+{
+  "name": "sock5-proxy",
+  "version": "1.0.0",
+  "main": "./src/index.js",
+  "repository": "git@github.com:elderapo/sock5-proxy.git",
+  "author": "Tomasz Martyński <tomek@martynski.pl>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
+  "dependencies": {
+    "socksv5": "^0.0.6"
+  }
+}
