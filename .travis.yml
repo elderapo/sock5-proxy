@@ -11,9 +11,9 @@ before_install:
  - sudo mv docker-compose /usr/local/bin
 
 script:
-#   - docker-compose build
+  - docker-compose build
   - docker-compose up -d
-  # - docker-compose run test
+  - sleep 5 && timeout 5 curl -x socks5://localhost:$PORT --proxy-user $LOGIN:$PASSWORD https://google.com
 
 notifications:
   email: false
