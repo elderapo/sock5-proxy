@@ -13,7 +13,7 @@ before_install:
 script:
   - docker-compose build
   - docker-compose up -d
-  - timeout 60 bash -c 'until printf "" 2>>/dev/null >>/dev/tcp/$0/$1; do sleep 1; done' localhost 1080 # wait for proxy to start up
+  - timeout 60 bash -c 'until printf "" 2>>/dev/null >>/dev/tcp/$0/$1; do sleep 1; done' localhost 1080 && sleep 1 # wait for proxy to start up
   - timeout 10 curl -x socks5://localhost:$PORT --proxy-user $LOGIN:$PASSWORD https://www.google.com/
 
 notifications:
