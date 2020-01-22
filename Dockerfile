@@ -5,7 +5,7 @@ ENV NODE_ENV $NODE_ENV
 
 WORKDIR /usr/src/app
 
-COPY package.json yarn.lock ./
+COPY package.json yarn.lock patches ./
 RUN set -ex; \
     if [ "$NODE_ENV" = "production" ]; then \
     yarn install --no-cache --frozen-lockfile --production; \
