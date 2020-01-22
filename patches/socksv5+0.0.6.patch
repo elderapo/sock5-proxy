@@ -1,0 +1,17 @@
+diff --git a/node_modules/socksv5/lib/server.js b/node_modules/socksv5/lib/server.js
+index 2ecd0e5..db67692 100644
+--- a/node_modules/socksv5/lib/server.js
++++ b/node_modules/socksv5/lib/server.js
+@@ -231,7 +231,11 @@ function proxySocket(socket, req) {
+              } else if (dstSock.writable)
+               dstSock.end();
+            })
+-           .connect(req.dstPort, dstIP);
++           .connect({
++             host: dstIP,
++             port: req.dstPort,
++             localAddress: req.localAddress
++           });
+     socket.dstSock = dstSock;
+   });
+ }

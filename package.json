@@ -6,9 +6,11 @@
   "author": "Tomasz Martyński <tomek@martynski.pl>",
   "license": "MIT",
   "scripts": {
-    "start": "node ./src/index.js"
+    "start": "node ./src/index.js",
+    "postinstall": "patch-package"
   },
   "dependencies": {
+    "patch-package": "^6.2.0",
     "socksv5": "^0.0.6"
   }
 }
