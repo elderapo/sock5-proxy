@@ -10,7 +10,7 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
-    "patch-package": "^6.2.0",
+    "patch-package": "^6.2.1",
     "socksv5": "^0.0.6"
   }
 }
